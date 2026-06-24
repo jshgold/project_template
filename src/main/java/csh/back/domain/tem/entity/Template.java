@@ -3,6 +3,7 @@ package csh.back.domain.tem.entity;
 import csh.back.global.entity.BaseEntity;
 import jakarta.persistence.Entity;
 import lombok.AccessLevel;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
@@ -12,9 +13,8 @@ import lombok.NoArgsConstructor;
 public class Template extends BaseEntity {
     private String tem;
 
-    public static Template create() {
-        Template template = new Template();
-        template.tem = "template";
-        return template;
+    @Builder
+    private Template (String tem) {
+        this.tem = tem;
     }
 }
